@@ -2,22 +2,22 @@ const aboutDropDownProps = [
 	{
 		id: "whoWeAre",
 		name: "Who We Are",
-		href: "/about/whoWeAre",
+		href: "/about/who-we-are",
 	},
 	{
 		id: "boardMembers",
 		name: "Board Members",
-		href: "/about/boardMembers",
+		href: "/about/board-members",
 	},
 	{
 		id: "staff",
 		name: "Staff",
-		href: "/about/staff",
+		href: "about/staff",
 	},
 	{
 		id: "contact",
 		name: "Contact Us",
-		href: "/about/contact",
+		href: "about/contact-us",
 	},
 ];
 

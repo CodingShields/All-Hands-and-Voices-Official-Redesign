@@ -6,7 +6,14 @@ import ProgramsPage from "./pages/ProgramsPage.jsx";
 import ResourcesPage from "./pages/ResourcesPage.jsx";
 import MembershipPage from "./pages/MembershipPage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
-import BoardMembers from "./pages/subpages/about/BoardMembers.jsx";
+import BoardMembers from "./pages/sub-pages/about/BoardMembers.jsx";
+import ContactUs from "./pages/sub-pages/about/ContactUs.jsx";
+import Staff from "./pages/sub-pages/about/Staff.jsx";
+import WhoWeAre from "./pages/sub-pages/about/WhoWeAre.jsx";
+import ChildSafety from "./pages/sub-pages/programs/ChildSafety.jsx";
+import DHH from "./pages/sub-pages/programs/DHH.jsx";
+import Education from "./pages/sub-pages/programs/Education.jsx";
+import GuidePage from "./pages/sub-pages/programs/GuidePage.jsx";
 function App() {
 	return (
 		<BrowserRouter>W
@@ -18,6 +25,15 @@ function App() {
 					<Route path='resources' element={<ResourcesPage />} />
 					<Route path='membership' element={<MembershipPage />} />
 					<Route path='admin' element={<AdminPage />} />
+					<Route path='about/board-members' element={<BoardMembers />} />
+					<Route path='about/contact-us' element={<ContactUs />} />
+					<Route path='about/staff' element={<Staff />} />
+					<Route path='about/who-we-are' element={<WhoWeAre />} />
+					<Route path='programs/child-safety' element={<ChildSafety />} />
+					<Route path='programs/dhh' element={<DHH />} />
+					<Route path='programs/education' element={<Education />} />
+					<Route path='programs/guide' element={<GuidePage />} />
+					
 				</Route>
 			</Routes>
 		</BrowserRouter>

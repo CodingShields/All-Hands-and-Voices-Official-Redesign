@@ -14,7 +14,7 @@ const programsNavBarDropDown = [
 	{
 		id: "childSafety",
 		name: "O.U.R. Children's Safety Project",
-		href: "/programs/childSafety",
+		href: "/programs/child-safety",
 	},
 	{
 		id: "dhh",
