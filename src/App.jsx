@@ -6,9 +6,10 @@ import ProgramsPage from "./pages/ProgramsPage.jsx";
 import ResourcesPage from "./pages/ResourcesPage.jsx";
 import MembershipPage from "./pages/MembershipPage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
+import BoardMembers from "./pages/subpages/about/BoardMembers.jsx";
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter>W
 			<Routes>
 				<Route path='/' element={<Layout />}>
 					<Route index element={<HomePage />} />

@@ -1,31 +1,54 @@
+import ehdiLogoSquare from "../assets/images/resources-page/ehdiLogoSquare.png";
+
 const ResourcesPage = () => {
 	return (
 		<div>
-			<div>
-				<div>
-					<img></img>
-					<h1>Resources</h1>
+			<div className='w-full h-full bg-white'>
+				<div className='w-full h-48 bg-hvblue-50 flex flex-row justify-center items-center'>
+					<img />
+					<h1
+						
+						className="text-7xl text-white font-kaushan"
+					>Resources</h1>
 				</div>
-				<div>
-					<div>
-						<h3>Alabama Hands & Voices Resources </h3>
-						<h3>Confirmed Hearing Loss</h3>
+				<div className='flex flex-row justify-evenly items-center w-full h-full bg-white'>
+					<div className='w-1/2 h-fit '>
+						<h3 className='bg-hvorange-300'>Alabama Hands & Voices Resources </h3>
+						<h3 className='bg-hvorange-300'>Confirmed Hearing Loss</h3>
 						<h3>Get connected now with Guide by Your Side and Educational Advocacy</h3>
-						<h3>Children Ages 0-3</h3>
+						<h3 className='bg-hvorange-300 text-center'>Children Ages 0-3</h3>
 						<div>
-							<div>
-								<h3></h3>
-								<h3></h3>
-								<h3></h3>
-								<h3></h3>
-								<h3></h3>
-								<h3></h3>
+							<div className='flex grid grid-cols-2 gap-4  p-4 text-2xl'>
+								<h3 href='http://alabamaparentcenter.com/web/' className='hover:underline hover:cursor-pointer py-4'>
+									Alabama Parent Education Center
+								</h3>
+								<h3 href='https://www.alabamaachieves.org/special-education/' className='hover:underline hover:cursor-pointer py-4'>
+									Alabama Department of Special Education Services
+								</h3>
+								<h3 href='https://www.rehab.alabama.gov/services/vr/vr' className='hover:underline hover:cursor-pointer py-4'>
+									Alabama Vocational Rehabilitation Services
+								</h3>
+								<h3 href='https://deafedguidelines.org/' className='hover:underline hover:cursor-pointer py-4'>
+									Deaf Education Guidelines
+								</h3>
+								<h3
+									href='https://alhandsandvoices.org/assets/08_ALHV%20V15%20Communication%20Plan%20-%20fillable%20form.docx'
+									className='hover:underline hover:cursor-pointer py-4'
+								>
+									Alabama Hands & Voices Communication Plan
+								</h3>
+								<h3
+									href='https://alhandsandvoices.org/assets/11_List%20of%20Resources%20and%20Providers%20Age%203+.pdf'
+									className='hover:underline hover:cursor-pointer py-4'
+								>
+									List of Resources and Providers
+								</h3>
 							</div>
 							<h3></h3>
 						</div>
 					</div>
-					<div>
-						<img />
+					<div className='w-1/4 bg-hvblue-50'>
+						<img src={ehdiLogoSquare} />
 						<p>
 							The EHDI-PALS directory has information about hearing (audiology) services for children from birth to age five. All of the facilities in
 							this directory report that they have the equipment and expertise to serve children and have licensed audiologists. The directory

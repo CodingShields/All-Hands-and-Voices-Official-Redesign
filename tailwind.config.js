@@ -3,6 +3,9 @@ module.exports = {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				kaushan: ["Kaushan Script"],
+			},
 			colors: {
 				hvblue: {
 					DEFAULT: "#141B4B",
