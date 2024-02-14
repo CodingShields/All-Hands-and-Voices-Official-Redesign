@@ -7,8 +7,8 @@ const Footer = () => {
 
 
     return (
-			<footer class='bg-white' aria-labelledby='footer-heading'>
-				<h2 id='footer-heading' class='sr-only'>
+			<footer class='bg-white' >
+				<h2 id='footer-heading' >
 					Footer
 				</h2>
 				<div class='mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8'>

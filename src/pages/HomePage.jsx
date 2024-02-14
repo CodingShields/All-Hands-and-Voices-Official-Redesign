@@ -36,7 +36,7 @@ const HomePage = () => {
 								<figure>
 									<div class='aspect-w-12 aspect-h-7 lg:aspect-none'>
 										<img
-											class='rounded-lg object-cover object-center shadow-lg'
+											className='rounded-lg object-cover object-center shadow-slate-600 shadow-2xl'
 											src={family}
 											alt='Family holding hands with child'
 											width='1184'
@@ -150,7 +150,7 @@ const HomePage = () => {
 								</defs>
 								<rect width='784' height='404' fill='url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)' />
 							</svg>
-							<img class='relative mx-auto h-96 w-96 object-cover' width='490' src={signKid} alt='' />
+							<img class='relative mx-auto h-96 w-96 object-cover shadow-white shadow-2xl rounded-lg' width='490' src={signKid} alt='' />
 						</div>
 					</div>
 
@@ -208,7 +208,7 @@ const HomePage = () => {
 									</defs>
 									<rect width='784' height='404' fill='url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)' />
 								</svg>
-								<img class='relative mx-auto h-96 w-96 object-cover' width='490' src={lawson} alt='' />
+								<img class='relative mx-auto h-96 w-96 object-cover shadow-white shadow-xl rounded-lg' width='490' src={lawson} alt='' />
 							</div>
 						</div>
 					</div>
@@ -221,8 +221,8 @@ const HomePage = () => {
 						<div class='relative z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16'>
 							<div class='absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden' aria-hidden='true'></div>
 							<div class='mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
-								<div class='aspect-h-6 aspect-w-10 bg-hvorange sm:aspect-h-1 sm:aspect-w-2 lg:aspect-w-1'>
-									<img class='rounded-3xl object-contain object-center p-4 shadow-2xl' src={hvLogoPng2x} alt='Hands and Voices Logo' />
+								<div class='aspect-h-6 aspect-w-10 bg-hvorange rounded-2xl sm:aspect-h-1 sm:aspect-w-2 lg:aspect-w-1'>
+									<img class='object-contain object-center p-4 shadow-2xl' src={hvLogoPng2x} alt='Hands and Voices Logo' />
 								</div>
 							</div>
 						</div>
