@@ -216,17 +216,17 @@ const HomePage = () => {
 			</div>
 			<div class='relative bg-white py-16'>
 				<div class='absolute inset-x-0 top-0 hidden h-1/2 bg-gray-50 lg:block' aria-hidden='true'></div>
-				<div class='mx-auto max-w-7xl bg-indigo-600 lg:bg-transparent lg:px-8'>
+				<div class='mx-auto max-w-7xl bg-indigo-600 lg:bg-transparent  lg:px-8'>
 					<div class='lg:grid lg:grid-cols-12'>
 						<div class='relative z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16'>
 							<div class='absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden' aria-hidden='true'></div>
 							<div class='mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
-								<div class='aspect-h-6 aspect-w-10 bg-hvorange rounded-2xl sm:aspect-h-1 sm:aspect-w-2 lg:aspect-w-1'>
+								<div class='aspect-h-6 aspect-w-10 bg-hvorange rounded-2xl  sm:aspect-h-1 sm:aspect-w-2 lg:aspect-w-1'>
 									<img class='object-contain object-center p-4 shadow-2xl' src={hvLogoPng2x} alt='Hands and Voices Logo' />
 								</div>
 							</div>
 						</div>
-						<div class='relative bg-hvblue lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl'>
+						<div class='relative bg-hvblue lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl '>
 							<div class='absolute inset-0 hidden overflow-hidden rounded-3xl lg:block' aria-hidden='true'>
 								<svg
 									class='absolute bottom-full left-full translate-y-1/3 -translate-x-2/3 transform xl:bottom-auto xl:top-0 xl:translate-y-0'
@@ -267,12 +267,12 @@ const HomePage = () => {
 									If you would like to donate to provide operational funds for Alabama Hands & Voices, Inc, we are an Alabama non-profit corporation
 									with 501(c)(3) status.
 								</p>
-								<a
-									class='block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-indigo-700 shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto'
+								<button
+									class='block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-indigo-700 shadow-md hover:bg-hvorange hover:text-white hover:shadow-white hover:shadow-lg ease-in-out duration-300 transition-all  sm:inline-block sm:w-auto'
 									href='#'
 								>
 									Donate Here!
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>

@@ -1,18 +1,19 @@
 import ehdiLogoSquare from "../assets/images/resources-page/ehdiLogoSquare.png";
-
+import resourcesHeader from "../assets/images/resources-page/resourcesHeader.jpg";
 const ResourcesPage = () => {
 	return (
 		<div>
 			<div className='w-full h-full bg-white'>
-				<div className='w-full h-48 bg-hvblue-50 flex flex-row justify-center items-center'>
-					<img />
-					<h1
-						
-						className="text-7xl text-white font-kaushan"
-					>Resources</h1>
+				<div className='w-full h-72 flex flex-row justify-center items-center'>
+					<img className='absolute w-full h-72 object-cover object-center brightness-125' src={resourcesHeader} />
+					{/* <div
+					className="w-fit h-fit px-12 py-2 bg-slate-600 z-10 rounded-3xl bg-opacity-80"
+					> */}
+					<h1 className='text-8xl text-black font-kaushan z-10'>Resources</h1>
+					{/* </div> */}
 				</div>
-				<div className='flex flex-row justify-evenly items-center w-full h-full bg-white'>
-					<div className='w-1/2 h-fit '>
+				<div className='flex flex-row justify-center items-center w-full h-full bg-white mt-4 space-x-10'>
+					<div className='w-2/6 h-fit '>
 						<h3 className='bg-hvorange-300'>Alabama Hands & Voices Resources </h3>
 						<h3 className='bg-hvorange-300'>Confirmed Hearing Loss</h3>
 						<h3>Get connected now with Guide by Your Side and Educational Advocacy</h3>
@@ -47,21 +48,27 @@ const ResourcesPage = () => {
 							<h3></h3>
 						</div>
 					</div>
-					<div className='w-1/4 bg-hvblue-50'>
-						<img src={ehdiLogoSquare} />
-						<p>
-							The EHDI-PALS directory has information about hearing (audiology) services for children from birth to age five. All of the facilities in
-							this directory report that they have the equipment and expertise to serve children and have licensed audiologists. The directory
-							contains clinic information, including:
-						</p>
-						<ul>
-							<li>audiology (hearing) services</li>
-							<li>languages available</li>
-							<li>payment options</li>
-							<li>appointment availability</li>
-						</ul>
-						<p>To learn more about childhood hearing loss and to find a pediatric audiologist, visit:</p>
-						<button>ehdi-pals.org</button>
+					<div className='w-96 bg-blue-400  '>
+					
+						<img className='h-auto w-72 mx-auto border-2 border-hvorange  mt-4' src={ehdiLogoSquare} />
+						<div
+						className="w-fit mx-auto text-white "
+						>
+							<p>
+								The EHDI-PALS directory has information about hearing (audiology) services for children from birth to age five. All of the facilities
+								in this directory report that they have the equipment and expertise to serve children and have licensed audiologists. The directory
+								contains clinic information, including:
+							</p>
+							<ul>
+								<li>audiology (hearing) services</li>
+								<li>languages available</li>
+								<li>payment options</li>
+								<li>appointment availability</li>
+							</ul>
+							<p>To learn more about childhood hearing loss and to find a pediatric audiologist, visit:</p>
+							<button>ehdi-pals.org</button>
+						</div>
+
 						<div>
 							<h3>Alabama Options for Services for Deaf/Hard of Hearing Children</h3>
 						</div>

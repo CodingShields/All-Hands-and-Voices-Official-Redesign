@@ -16,7 +16,7 @@ import Education from "./pages/sub-pages/programs/Education.jsx";
 import GuidePage from "./pages/sub-pages/programs/GuidePage.jsx";
 function App() {
 	return (
-		<BrowserRouter>W
+		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Layout />}>
 					<Route index element={<HomePage />} />
