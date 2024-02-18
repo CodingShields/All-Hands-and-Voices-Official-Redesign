@@ -1,7 +1,7 @@
 import aboutUsBanner from "../../../assets/images/about-us/who-we-are/aboutUsBanner.jpg";
 import aboutUsWhoWeAre1 from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAre1.jpg";
 import aboutUsWhoWeAreFamily from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAreFamily.jpg";
-import aboutUsWhoWeAreTrail from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAreTrail.jpg";
+import aboutUsWhoWeAreTrail from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAreTrail.jpeg";
 const WhoWeAre = () => {
 	return (
 		<div>
@@ -73,9 +73,9 @@ const WhoWeAre = () => {
 					</div>
 				</div>
 				<div className='flex flex-col justify-center items-center w-full h-full mt-4 space-x-10'>
-					<div className='flex flex-row justify-center items-start '>
-						<img src={aboutUsWhoWeAreFamily} className='w-1/2 px-24' />
-						<ul className='list-disc w-1/6'>
+					<div className='flex flex-row justify-center items-start overflow-y-hidden h-96 w-3/4'>
+						<img src={aboutUsWhoWeAreFamily} className='w-1/2 px-24 object-cover' />
+						<ul className='list-disc w-1/6 space-y-4'>
 							<li>We all want the best for our children who are deaf or hard of hearing.</li>
 							<li>
 								We deserve respect and honor for our role as parents/families. We require a beneficial, successful educational experience for our
@@ -85,13 +85,15 @@ const WhoWeAre = () => {
 							<li>We want to know about opportunities and resources.</li>
 						</ul>
 					</div>
-					<div>
-						<ul className='list-disc w-1/6'>
-							<li>We need training and support to become effective advocates for our kids. </li>
-							<li>We are stronger united by our common interests than divided by differing communication choices.</li>
-							<li>We must lend our organized support to all kinds of efforts that promote our common interests - strength in numbers!</li>
-						</ul>
-						<img src={aboutUsWhoWeAreTrail} className='w-1/2 px-24' />
+					<div className='flex flex-col justify-center items-center w-3/4 h-full mt-4 space-x-10'>
+						<div className='flex flex-row justify-center items-start overflow-y-hidden h-96 '>
+							<ul className='list-disc w-1/6 space-y-4'>
+								<li>We need training and support to become effective advocates for our kids. </li>
+								<li>We are stronger united by our common interests than divided by differing communication choices.</li>
+								<li>We must lend our organized support to all kinds of efforts that promote our common interests - strength in numbers!</li>
+							</ul>
+							<img src={aboutUsWhoWeAreTrail} className='w-1/2 px-24 object-cover' />
+						</div>
 					</div>
 				</div>
 				<h1>JOIN HANDS & VOICES</h1>
