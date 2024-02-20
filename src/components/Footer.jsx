@@ -14,20 +14,20 @@ const Footer = () => {
 	}
 	return (
 		<div>
-			<div className='w-full h-fit bg-gradient-to-r from-hvblue to-white flex flex-row justify-evenly items-center py-6 border-t-8 border-hvorange'>
+			<div className='w-full h-fit bg-gradient-to-r from-hvblue to-white flex flex-row justify-evenly items-center py-4 border-t-8 border-hvorange'>
 				<h1 className='text-white text-2xl text-center font-bold'>
 					Want To Donate to the <span className='font-kaushan font-thin text-3xl text-hvorange'> Mission?</span>
 				</h1>
-				<button className='bg-hvorange text-white h-fit w-fit px-4 py-4 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'>
+				<a href="https://www.paypal.com/donate?token=Iy-0G-kWrPEa7vNtfOzaGW2lfss5eN8iaUvglAI-DJEwgJ91Z9ayc7G-RcYVr_WMmssLxgekK3SeIHOW" target="_blank"className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'>
 					Donate Here!
-				</button>
+				</a>
 			</div>
 			<div className='xl:grid xl:grid-cols-3 xl:gap-8 py-4'>
 				<div className='px-4'>
 					<img src={alabamahvLogo} />
 					<p className='text-sm'>Making the world a better place through constructing elegant hierarchies.</p>
 					<div className='flex flex-row w-full justify-start space-x-8 py-4 ml-8'>
-						<a href='https://www.facebook.com/alabamahandsandvoices/' className='text-gray-400 hover:text-gray-500'>
+						<a href='https://www.facebook.com/alabamahandsandvoices/'target="_blank" className='text-gray-400 hover:text-gray-500'>
 							<span className='sr-only'>Facebook</span>
 							<img src={facebook} className='w-6 hover:grayscale-0 grayscale duration-300 hover:scale-125' />
 						</a>

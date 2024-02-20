@@ -12,9 +12,11 @@ const NavBarDropDown = (props) => {
 		<div>
 			{Array.isArray(dropDownData) &&
 				dropDownData.map((item, id) => (
-					<div className=' p-4 ' key={id}>
+					<div
+						
+						className=' p-4 text-xs ' key={id}>
 						<Link to={item.href}>
-							<h1 className='whitespace-nowrap text-white hover:text-hvorange'>{item.name}</h1>
+							<h1 className='whitespace-nowrap text-white hover:text-hvorange '>{item.name}</h1>
 						</Link>
 					</div>
 				))}

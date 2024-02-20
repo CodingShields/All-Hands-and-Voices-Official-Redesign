@@ -9,15 +9,23 @@ export default function DashBoardLayout() {
 	const [aboutDropDown, setAboutDropDown] = useState(false);
 	const [programsDropDown, setProgramsDropDown] = useState(false);
 
+	
+
 	const handleAboutClick = () => {
 		setAboutDropDown(!aboutDropDown);
 		setProgramsDropDown(false);
+		setTimeout(() => {
+			setAboutDropDown(false);
+		}, 5000);
 		console.log("success");
 	};
 
 	const handleProgramsClick = () => {
 		setProgramsDropDown(!programsDropDown);
 		setAboutDropDown(false);
+		setTimeout(() => {
+			setProgramsDropDown(false);
+		}, 5000);
 		console.log("success");
 	};
 
@@ -25,14 +33,20 @@ export default function DashBoardLayout() {
 		return classes.filter(Boolean).join(" ");
 	}
 
+
+
 	return (
-		<>
-			<nav className='flex justify-evenly text-white bg-hvblue  p-4 text-2xl font-bold border-b-2 border-hvorange shadow-md shadow-hvorange'>
+		<div id='header'  className='w-full bg-hvblue border-b-2 border-hvorange shadow-md shadow-hvorange'>
+			<nav className='flex justify-evenly text-white w-3/4 mx-auto p-4 text-lg font-bold '>
 				<NavLink to='/' className='hover:text-hvorange'>
 					Home
 				</NavLink>
 				<div>
-					<NavLink id='about' onClick={handleAboutClick} className='hover:text-hvorange w-fit flex flex-row justify-center items-center'>
+					<NavLink
+						id='about'
+						onClick={handleAboutClick}
+						className='hover:text-hvorange w-fit flex flex-row justify-center items-center'
+					>
 						About <ChevDownBtn onClick={handleAboutClick} />
 					</NavLink>
 
@@ -68,7 +82,6 @@ export default function DashBoardLayout() {
 					Membership
 				</NavLink>
 			</nav>
-
-		</>
+		</div>
 	);
 }
