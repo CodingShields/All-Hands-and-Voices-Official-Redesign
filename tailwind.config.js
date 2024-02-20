@@ -3,6 +3,19 @@ module.exports = {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			keyframes: {
+				"scale-0": {
+					"0%": {
+						transform: "scale(0) ",
+					},
+					"100%": {
+						transform: "scale(1) ",
+					},
+				},
+			},
+			animation: {
+				scale: "scale 5s ease-in-out loop",
+			},
 			fontFamily: {
 				kaushan: ["Kaushan Script"],
 			},

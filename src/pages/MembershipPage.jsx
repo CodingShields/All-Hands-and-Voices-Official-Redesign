@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import MembershipModal from "../components/MembershipModal";
 
 const MembershipPage = () => {
-	
 	const [state, setState] = useState({
 		error: false,
 		errorMessage: "",
@@ -11,6 +10,7 @@ const MembershipPage = () => {
 		successMessage: "",
 	});
 
+	const [showModal, setShowModal] = useState(false);
 
 	const [form, setForm] = useState({
 		parentName: "",
@@ -25,10 +25,7 @@ const MembershipPage = () => {
 		membershipType: "",
 		membershipDonation: "",
 	});
-	
-	
-	
-	
+
 	return (
 		<div>
 			<div className='w-full bg-hvorange py-8 leading-8'>
@@ -206,7 +203,12 @@ const MembershipPage = () => {
 								</div>
 
 								<div className='inline-flex w-full justify-start items-center space-x-2 '>
-									<input name='membership-0' className='form-check-input active:bg-hvorange focus:caret-hvorange focus:text-hvorange' type='checkbox' id='zeroCheck' />
+									<input
+										name='membership-0'
+										className='form-check-input active:bg-hvorange focus:caret-hvorange focus:text-hvorange'
+										type='checkbox'
+										id='zeroCheck'
+									/>
 									<label className='form-check-label' for='zeroCheck'>
 										$0 Request Scholarship/Fee waiver
 									</label>
@@ -214,6 +216,7 @@ const MembershipPage = () => {
 							</div>
 						</div>
 					</div>
+
 					<button
 						type='submit'
 						className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
@@ -222,8 +225,14 @@ const MembershipPage = () => {
 						Submit
 					</button>
 				</form>
-			</section>
-			<MembershipModal />
+			</section>{" "}
+			<button
+				onClick={() => setShowModal(true)}
+				className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
+			>
+				Make Membership Payment
+			</button>
+			<MembershipModal show={showModal} closeModal={() => setShowModal(false)} />
 		</div>
 	);
 };
