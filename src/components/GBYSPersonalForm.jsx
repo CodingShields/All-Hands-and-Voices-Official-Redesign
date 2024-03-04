@@ -1,207 +1,346 @@
 import { useState, useEffect } from "react";
 
-
-
 const GBYSPersonalForm = () => {
 	
-	
-	
+	const [state, setState] = useState({
+		error: false,
+		errorMessage: "",
+		loading: false,
+		success: false,
+		successMessage: "",
+		personalForm: true,
+		referralForm: false,
+	});
+
+	const [formData, setFormData] = useState({
+		parentName: "",
+		secondaryParentName: "",
+		phone: "",
+		childName: "",
+		email: "",
+		childBirth: "",
+		address: "",
+		city: "",
+		zip: "",
+		county: "",
+		language: "",
+		typeOfHearingLoss: "",
+		degreeOfHearingLossLeft: "",
+		degreeOfHearingLossRight: "",
+		hearingDevice: "",
+		communicationMode: "",
+		other: false,
+		otherData: "",
+		questions: "",
+	});
+
+	const initialFormData = {
+		parentName: "",
+		secondaryParentName: "",
+		phone: "",
+		childName: "",
+		email: "",
+		childBirth: "",
+		address: "",
+		city: "",
+		zip: "",
+		county: "",
+		language: "",
+		typeOfHearingLoss: "",
+		degreeOfHearingLossLeft: "",
+		degreeOfHearingLossRight: "",
+		hearingDevice: "",
+		communicationMode: [],
+		other: false,
+		otherData: "",
+		questions: "",
+	};
+
+	useEffect(() => {
+		setFormData(initialFormData);
+	}, []);
+
+	const handleCommunicationSelection = (e) => {
+		const value = e.target.value;
+
+		if (e.target.value === "other") {
+			setFormData({ ...formData, other: !formData.other });
+		}else if (formData.communicationMode.includes(value)) {
+			setFormData({ ...formData, communicationMode: formData.communicationMode.filter((item) => item !== value) });
+		} else {
+			setFormData({ ...formData, communicationMode: [...formData.communicationMode, value] });
+		}
+	};
+
+	console.log(formData, "formData");
 	return (
-		<div className='w-full h-full  text-white '>
-			<section>
-				<form name='membership' netlify action='choose-your-membership.html' method='post' className='w-3/4 mx-auto bg-hvblue p-8 space-y-8'>
-					<div className='flex flex-row justify-around w-full mx-auto mb-4'>
-						<div className='flex flex-col w-full px-4 group'>
-							<label for='inputName' className='group-focus:text-hvorange'>
-								Parent/Guardian Name:
-							</label>
-							<input
-								name='name'
-								type='text'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputName'
-							/>
+		<div className='w-full'>
+			<div className='w-3/4 h-fit text-white mx-auto py-4'>
+				<section>
+					<form className='w-3/4 mx-auto bg-hvblue p-8 space-y-8 rounded-xl shadow-2xl'>
+						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
+							<div className='flex flex-col w-full px-4 group'>
+								<label className='group-focus:text-hvorange'>Parent/Guardian Name:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, parentName: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								/>
+							</div>
+
+							<div className='flex flex-col w-full px-4'>
+								<label for='inputName'>Secondary Parent/Guardian Name:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, secondaryParentName: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								/>
+							</div>
+						</div>
+						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
+							<div className='flex flex-col w-full px-4'>
+								<label for='inputTel'>Phone Number:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, phone: e.target.value });
+									}}
+									type='tel'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								/>
+							</div>
+							<div className='flex flex-col w-full px-4'>
+								<label for='childName'>Child's Name:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, childName: e.target.value });
+									}}
+									name='childName'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								/>
+							</div>
 						</div>
 
-						<div className='flex flex-col w-full px-4'>
-							<label for='inputName'>Secondary Parent/Guardian Name:</label>
-							<input
-								name='name'
-								type='text'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputName'
-							/>
+						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
+							<div className='flex flex-col w-full px-4'>
+								<label for='inputEmail'>Email:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, email: e.target.value });
+									}}
+									type='email'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									id='inputEmail'
+									aria-describedby='emailHelp'
+								/>
+								<small id='emailHelp' className='form-text text-muted'>
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							<div className='flex flex-col w-full px-4'>
+								<label for='childName'>Child Birthday</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, childBirth: e.target.value });
+									}}
+									type='date'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								/>
+							</div>
 						</div>
-					</div>
-					<div className='flex flex-row justify-around w-full mx-auto mb-4'>
-						<div className='flex flex-col w-full px-4'>
-							<label for='inputTel'>Phone Number</label>
-							<input
-								name='phone'
-								type='tel'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputTel'
-							/>
-						</div>
-						<div className='flex flex-col w-full px-4'>
-							<label for='inputTel'>Phone Number</label>
-							<input
-								name=''
-								type='tel'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputTel'
-							/>
-						</div>
-					</div>
 
-					<div className='w-full'>
-						<div className='flex flex-col w-full px-4'>
-							<label for='inputEmail'>Email:</label>
-							<input
-								name='email'
-								type='email'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputEmail'
-								aria-describedby='emailHelp'
-							/>
-							<small id='emailHelp' className='form-text text-muted'>
-								We'll never share your email with anyone else.
-							</small>
-						</div>
-					</div>
-
-					<div className='flex flex-row w-full px-4 indent-2 '>
-						<div className='flex flex-col w-full pr-2'>
-							<label for='inputAddress'>Home Address:</label>
-							<input
-								name='address'
-								type='text'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputAddress'
-								placeholder='1234 Main St'
-							/>
-						</div>
-						<div className='flex flex-col w-full px-2'>
-							<label for='inputCity'>City:</label>
-							<input
-								name='city'
-								type='text'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputCity'
-							/>
-						</div>
-						<div className='flex flex-col w-full pl-2 '>
-							<label for='inputZip'>Zip:</label>
-							<input
-								name='zip'
-								type='text'
-								className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-								id='inputZip'
-							/>
-						</div>
-					</div>
-					<div className='flex flex-col w-full px-4 indent-2 '>
-						<label for='inputSchoolDist'>School Dist./BOCES:</label>
-						<input
-							name='school-dist'
-							type='text'
-							className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-							id='inputSchoolDist'
-							placeholder='School District'
-						/>
-					</div>
-					<div className='flex flex-col w-full px-4 indent-2'>
-						<label for='inputTextArea'>Children (deaf/hh &amp; siblings, ages):</label>
-						<textarea
-							name='textarea'
-							className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
-							rows='3'
-							id='inputTextArea'
-						></textarea>
-					</div>
-					<div className='flex flex-col w-full px-4 caret-hvorange'>
-						<p className='text-lg font-bold underline'>Choose Your Membership:</p>
-						<div className='form-check flex flex-col w-full ml-4 space-y-4 mt-4'>
-							<div className='inline-flex w-full justify-start items-center space-x-2 '>
-								<input name='checkbox-one-parent' className='form-check-input focus:text-hvorange' type='checkbox' id='parentCheck' />
-								<label className='form-check-label' for='parentCheck'>
-									Parent, Student, DHH Adult
-								</label>
+						<div className='flex flex-row w-full px-4 indent-2 '>
+							<div className='flex flex-col w-full pr-2'>
+								<label>Home Address:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, address: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									placeholder='1234 Main St'
+								/>
 							</div>
-							<div className='inline-flex w-full justify-start items-center space-x-2 '>
-								<input name='checkbox-two-professional' className='form-check-input focus:text-hvorange' type='checkbox' id='professionalCheck' />
-								<label className='form-check-label' for='professionalCheck'>
-									Professional
-								</label>
+							<div className='flex flex-col w-full px-2'>
+								<label>City:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, city: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								/>
 							</div>
-							<div className='inline-flex w-full justify-start items-center space-x-2 '>
-								<input name='checkbox-three-org' className='form-check-input focus:text-hvorange' type='checkbox' id='organizationCheck' />
-								<label className='form-check-label' for='organizationCheck'>
-									Organization
-								</label>
+							<div className='flex flex-col w-full pl-2 '>
+								<label for='inputZip'>Zip:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, zip: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									id='inputZip'
+								/>
 							</div>
-							<div className='inline-flex w-full justify-start items-center space-x-2 '>
-								<input name='checkbox-four-other' className='form-check-input focus:text-hvorange' type='checkbox' id='otherCheck' />
-								<label className='form-check-label' for='otherCheck'>
+						</div>
+						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
+							<div className='flex flex-col w-full pr-2'>
+								<label>County</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, county: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									id='county'
+									placeholder='County'
+								/>
+							</div>
+							<div className='flex flex-col w-full pr-2'>
+								<label>Language Spoken in the Home:</label>
+								<input
+									onChange={(e) => {
+										setFormData({ ...formData, language: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									id='county'
+									placeholder='Language'
+								/>
+							</div>
+						</div>
+						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
+							<div className='flex flex-col w-full pr-2'>
+								<label>Type Of Hearing Loss</label>
+								<select
+									onChange={(e) => {
+										setFormData({ ...formData, typeOfHearingLoss: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									id='county'
+									placeholder='County'
+								>
+									<option>Select One</option>
+									<option value='Conductive (Middle Ear)'>Conductive (Middle Ear)</option>
+									<option value='Sensorineureal (Inner ear)'>Sensorineureal (Inner ear)</option>
+									<option value='Mixed (Conductive & Sensorineureal)'>Mixed (Conductive & Sensorineureal) </option>
+								</select>
+							</div>
+							<div className='flex flex-col w-full pr-2'>
+								<label for='inputSchoolDist'>Degree of Hearing Loss (left ear):</label>
+								<select
+									onChange={(e) => {
+										setFormData({ ...formData, degreeOfHearingLossLeft: e.target.value });
+									}}
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+									placeholder='County'
+								>
+									<option>Select One</option>
+									<option value='Unsure'>Unsure</option>
+									<option value='Normal'>Normal</option>
+									<option value='Mild'>Mild</option>
+									<option value='Moderate'>Moderate</option>
+									<option value='Severe'>Severe</option>
+									<option value='Profound'>Profound</option>
+								</select>
+							</div>
+						</div>
+						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
+							<div className='flex flex-col w-full pr-2'>
+								<label for='inputSchoolDist'>Type Of Hearing Loss</label>
+								<select
+									onChange={(e) => {
+										setFormData({ ...formData, typeOfHearingLoss: e.target.value });
+									}}
+									type='text'
+									className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '
+								>
+									{" "}
+									<option>Select One</option>
+									<option value='Conductive (Middle Ear)'>Unsure</option>
+									<option value='Sensorineureal (Inner ear)'>Normal</option>
+									<option value='Mixed (Conductive & Sensorineureal)'>Mild</option>
+									<option value='Mixed (Conductive & Sensorineureal)'>Moderate</option>
+									<option value='Mixed (Conductive & Sensorineureal)'>Severe</option>
+									<option value='Mixed (Conductive & Sensorineureal)'>Profound</option>
+								</select>
+							</div>
+							<div className='flex flex-col w-full pr-2'>
+								<label for='inputSchoolDist'>Hearing Device if used:</label>
+								<select className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '>
+									<option>Select One</option>
+									<option>Unsure</option>
+									<option>Hearing Aid(s)</option>
+									<option>Cochlear Implant(s)</option>
+									<option>Bone Anchored Hearing Aid(s) (BAHA)</option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<p className='pb-4'>Communication Mode(s):</p>
+							<ul onChange={handleCommunicationSelection} className='grid grid-cols-1 gap-4 '>
+								<li>
+									<input type='checkbox' className='mr-2' value='American Sign Language' />
+									American Sign Language
+								</li>
+								<li>
+									<input type='checkbox' className='mr-2' value='Listening & Spoken English' />
+									Listening & Spoken English
+								</li>
+								<li>
+									<input type='checkbox' className='mr-2' value='Finger Spelling' />
+									Finger Spelling
+								</li>
+								<li>
+									<input type='checkbox' className='mr-2' value='Cued Speech' />
+									Cued Speech
+								</li>
+								<li>
+									<input type='checkbox' className='mr-2' value='Combination of two or more' />
+									Combination of two or more:
+								</li>
+								<li>
+									<input type='checkbox' className='mr-2' value='other' />
 									Other
-								</label>
-							</div>
+								</li>
+							</ul>
+							<textarea
+								placeholder="Please specify if you've selected 'other'"
+								onChange={(e) => {
+									setFormData({ ...formData, otherData: e.target.value });
+								}}
+								className={
+									formData.other
+										? "mt-2 w-full rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange scale-100 transition-all ease-in-out duration-300"
+										: "w-full h-0 rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange scale-0 transition-all ease-in-out duration-300"
+								}
+							/>{" "}
 						</div>
-						<div className='mt-4'>
-							<p className='text-lg font-bold underline'>Annual membership donation enclosed:</p>
-							<div className='form-check flex flex-col w-full ml-4 space-y-4 mt-4'>
-								<div className='inline-flex w-full justify-start items-center space-x-2 '>
-									<input name='membership-25' className='form-check-input focus:text-hvorange' type='checkbox' id='twentyFiveCheck' />
-									<label className='form-check-label' for='twentyFiveCheck'>
-										$25 Parent/DHH adult/Student
-									</label>
-								</div>
 
-								<div className='inline-flex w-full justify-start items-center space-x-2 '>
-									<input name='membership-40' className='form-check-input focus:text-hvorange' type='checkbox' id='fortyCheck' />
-									<label className='form-check-label' for='fortyCheck'>
-										$40 Professional
-									</label>
-								</div>
-
-								<div className='inline-flex w-full justify-start items-center space-x-2 '>
-									<input name='membership-50' className='form-check-input focus:text-hvorange' type='checkbox' id='fiftyCheck' />
-									<label className='form-check-label' for='fiftyCheck'>
-										$50 Organization
-									</label>
-								</div>
-
-								<div className='inline-flex w-full justify-start items-center space-x-2 '>
-									<input name='membership-donate' className='form-check-input focus:text-hvorange' type='checkbox' id='addDonateCheck' />
-									<label className='form-check-label' for='addDonateCheck'>
-										Additional Donation to Chapter to Help Cover Scholarships/Fee Waivers and Chapter Expenses (on next page)
-									</label>
-								</div>
-
-								<div className='inline-flex w-full justify-start items-center space-x-2 '>
-									<input
-										name='membership-0'
-										className='form-check-input active:bg-hvorange focus:caret-hvorange focus:text-hvorange'
-										type='checkbox'
-										id='zeroCheck'
-									/>
-									<label className='form-check-label' for='zeroCheck'>
-										$0 Request Scholarship/Fee waiver
-									</label>
-								</div>
-							</div>
+						<div>
+							<p>Please provide initial parent questions/support requested, special needs or important information:</p>
+							<textarea
+								onChange={(e) => {
+									setFormData({ ...formData, questions: e.target.value });
+								}}
+								className={
+									"w-full rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange"
+								}
+							/>
 						</div>
-					</div>
-
-					<button
-						type='submit'
-						className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
-						formaction='choose-your-membership.html'
-					>
-						Submit
-					</button>
-				</form>
-			</section>{" "}
+						<button
+							type='submit'
+							className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
+						>
+							Submit
+						</button>
+					</form>
+				</section>{" "}
+			</div>
 		</div>
 	);
 };

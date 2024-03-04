@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import GBYSPersonalForm from "../../../components/GBYSPersonalForm";
-import GbysReferralForm from "../../../components/GbysReferralForm";
+import GBYSPersonalForm from "../../../components/GBYSPersonalForm.jsx";
+import GBYSReferralForm from "../../../components/GBYSReferralForm.jsx";
+import DownloadModal from "../../../components/DownloadModal";
 import GbysLogo from "../../../assets/images/programs/guide-page/gbys-logo.png";
 import DecorativeLine from "../../../components/DecorativeLine";
 
@@ -14,14 +15,29 @@ const GuidePage = () => {
 		successMessage: "",
 		personalForm: true,
 		referralForm: false,
+		showModal: false,
 	});
 
 	const [showModal, setShowModal] = useState(false);
 
 	const navigate = useNavigate();
 
+	const handleFormChange = (e) => {
+		if (e.target.textContent === "Personal Form") {
+			setState({ ...state, personalForm: true, referralForm: false });
+		} else {
+			setState({ ...state, personalForm: false, referralForm: true });
+		}
+	};
+
+	const handleModal = () => {
+		setShowModal(!showModal);
+	};
+	console.log(state.showModal);
+
 	return (
 		<div>
+			{showModal ? <DownloadModal closeModal={handleModal} /> : null}
 			<div className='w-full h-96 '>
 				<div className='w-full h-96 absolute left-36 '>
 					<div className='w-fit h-fit bg-hvorange-500 mt-10 rounded-lg p-4 shadow-xl shadow-hvblue-200'>
@@ -88,9 +104,41 @@ const GuidePage = () => {
 							{""} Membership page.
 						</a>
 					</p>
-					<p className='w-1/2 mx-auto text-center p-4 py-6'>View or Download GBYS Pamphlet – English or Spanish</p>
+					<p className='w-1/2 mx-auto text-center p-4 py-6'>
+						View or Download GBYS Pamphlet –{" "}
+						<span className='text-hvorange-500 font-bold hover:cursor-pointer ' onClick={handleModal}>
+							English or Spanish{" "}
+						</span>
+					</p>
 				</div>
-				{state.GbysPersonalForm && <GBYSPersonalForm />}
+			</div>
+			<div className='w-full mx-auto'>
+				<div className='w-full bg-hvblue-500 py-6 inline-flex gap-6 justify-center'>
+					<button
+						className={
+							state.personalForm
+								? "hover:cursor-pointer hover:text-white ring-1 ring-hvorange-500 rounded-lg p-2 transition-all ease-in-out duration-300 text-hvblue-500 bg-hvorange-300 shadow-lg shadow-hvorange-200"
+								: "hover:cursor-pointer hover:text-white ring-1 ring-hvorange-500 rounded-lg p-2 transition-all ease-in-out duration-300 text-hvorange-500"
+						}
+						value='Personal Form'
+						onClick={handleFormChange}
+					>
+						Personal Form
+					</button>
+					<button
+						className={
+							state.referralForm
+								? "hover:cursor-pointer hover:text-white ring-1 ring-hvorange-500 rounded-lg p-2 transition-all ease-in-out duration-300 text-hvblue-500 bg-hvorange-300 shadow-lg shadow-hvorange-200"
+								: "hover:cursor-pointer text-white ring-1 ring-hvorange-500 rounded-lg p-2 transition-all ease-in-out duration-300 hover:text-hvorange-500"
+						}
+						value='Referral Form'
+						onClick={handleFormChange}
+					>
+						Referral Form
+					</button>
+				</div>
+				{state.personalForm ? <GBYSPersonalForm /> : null}
+				{state.referralForm ? <GBYSReferralForm /> : null}
 			</div>
 		</div>
 	);
