@@ -26,7 +26,7 @@ const DownloadModal = ({ closeModal }) => {
 	return (
 		<div className='w-full screen bg-black bg-opacity-50 fixed top-0 left-0 z-50'>
 			<div className='w-fit h-fit  bg-white fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-xl p-4'>
-				<div className='absolute top-0 right-0'>
+				<div className='absolute top-0 right-0 mr-6'>
 					<CloseButton onClick={closeModal} />
 				</div>
 				<div className='grid grid-cols-2 gap-4 justify-center items-center w-full h-full p-4'>

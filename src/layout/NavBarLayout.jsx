@@ -16,7 +16,7 @@ export default function DashBoardLayout() {
 		setProgramsDropDown(false);
 		setTimeout(() => {
 			setAboutDropDown(false);
-		}, 5000);
+		}, 3000);
 		console.log("success");
 	};
 
@@ -25,7 +25,7 @@ export default function DashBoardLayout() {
 		setAboutDropDown(false);
 		setTimeout(() => {
 			setProgramsDropDown(false);
-		}, 5000);
+		}, 3000);
 		console.log("success");
 	};
 
@@ -37,7 +37,7 @@ export default function DashBoardLayout() {
 
 	return (
 		<div id='header'  className='w-full bg-hvblue border-b-2 border-hvorange shadow-md shadow-hvorange'>
-			<nav className='flex justify-evenly text-white w-3/4 mx-auto p-4 text-lg font-bold '>
+			<nav className='flex justify-evenly text-white w-3/4 mx-auto p-2 text-lg font-bold '>
 				<NavLink to='/' className='hover:text-hvorange'>
 					Home
 				</NavLink>

@@ -1,11 +1,19 @@
+import { Navigate, useNavigate } from "react-router-dom";
+import HVMembershipForm from "../../../assets/documents/HV-Membership-Form.pdf";
 import aboutUsBanner from "../../../assets/images/about-us/who-we-are/aboutUsBanner.jpg";
 import aboutUsWhoWeAre1 from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAre1.jpg";
 import aboutUsWhoWeAreFamily from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAreFamily.jpg";
 import aboutUsWhoWeAreTrail from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAreTrail.jpeg";
 const WhoWeAre = () => {
+	const Navigate = useNavigate();
+
+	const handleFormDownload = () => {
+		window.open(HVMembershipForm);
+	};
+
 	return (
 		<div>
-			<div className='w-full bg-cover bg-center flex flex-col justify-center items-center'>
+			<div className='w-full bg-cover bg-center flex flex-col justify-center items-center '>
 				<div className='w-full h-fit bg-black bg-opacity-30 py-4 text-white text-center absolute left-50 z-10'>
 					<h1 className=' sm:text-5xl lg:text-7xl font-kaushan '>About Us</h1>
 					<h1 className='sm:text-5xl lg:text-3xl  '>
@@ -16,8 +24,8 @@ const WhoWeAre = () => {
 				<img src={aboutUsBanner} className='h-64 w-full bg-fixed object-cover opacity-80' />
 			</div>
 
-			<div className='bg-hvblue block'>
-				<div className='flex flex-row mx-auto w-3/4 justify-center border-b-8 border-hvorange'>
+			<div className='bg-hvblue block py-8'>
+				<div className='flex flex-row mx-auto w-3/4 justify-center border-b-8 border-hvorange py-4'>
 					<div className='w-96 px-12 py-12'>
 						<h2 className='text-2xl font-extrabold tracking-tight text-hvorange text-left w-3/4'>WHO WE ARE</h2>
 						<p className='text-lg  text-white'>
@@ -30,7 +38,7 @@ const WhoWeAre = () => {
 							</p>
 						</p>
 					</div>
-					<img src={aboutUsWhoWeAre1} className='w-1/2 object-cover h-auto' />
+					<img src={aboutUsWhoWeAre1} className='w-1/2 object-cover h-auto rounded-2xl' />
 				</div>
 				<div className='w-full  mt-10'>
 					<div className='w-1/2 mx-auto'>
@@ -52,7 +60,9 @@ const WhoWeAre = () => {
 						<div className='w-full py-10 flex justify-center items-center'>
 							<button
 								class='rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-indigo-700 shadow-md hover:bg-hvorange hover:text-white hover:shadow-white hover:shadow-lg ease-in-out duration-300 transition-all  sm:inline-block sm:w-auto'
-								href='#'
+								onClick={() => {
+									Navigate("/about/contact-us");
+								}}
 							>
 								CONTACT US
 							</button>
@@ -96,13 +106,31 @@ const WhoWeAre = () => {
 						</div>
 					</div>
 				</div>
-				<h1>JOIN HANDS & VOICES</h1>
-				<p>
-					Whether you're signing up for the first time or renewing your membership to Alabama Hands & Voices, please take time now to download the
-					membership form or visit our online membership page. Your contribution helps us to continue developing and disseminating resources designed
-					to give families unbiased information for their children who are deaf or hard-of-hearing. We are grateful for your support. Thank you!
-					Scholarships are available for parents upon request Download our Membership Form or visit our membership sign-up page to pay online.
-				</p>
+				<div className='bg-gray-100 text-center'>
+					<h1 className='font-kaushan text-5xl text-hvorange-500 py-10'>JOIN HANDS & VOICES</h1>
+					<p className='w-1/2 mx-auto text-lg text-black-500 px-10 pb-10'>
+						Whether you're signing up for the first time or renewing your membership to Alabama Hands & Voices, please take time now to download the
+						membership form or visit our online membership page. Your contribution helps us to continue developing and disseminating resources
+						designed to give families unbiased information for their children who are deaf or hard-of-hearing. We are grateful for your support. Thank
+						you!
+					</p>
+					<p className='w-1/2 mx-auto text-lg text-black-500 px-10 pb-10'>
+						Scholarships are available for parents upon request{" "}
+						<a href={HVMembershipForm} onClick={handleFormDownload} className='text-hvorange-500 font-bold underline hover:cursor-pointer ' download>
+							Download
+						</a>{" "}
+						our Membership Form or visit our{" "}
+						<span
+							onClick={() => {
+								Navigate("/membership");
+							}}
+							className='text-hvorange-500 font-bold underline hover:cursor-pointer'
+						>
+							Membership Sign-up Page
+						</span>{" "}
+						to pay online.
+					</p>
+				</div>
 			</div>
 		</div>
 	);
