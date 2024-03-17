@@ -12,7 +12,6 @@ const AllFormsTable = () => {
 							return (
 								<th key={id} class='w-32 h-fit text-[14px] border-2 border-black'>
 									{field}
-									<input type='radio' className='m-2' />
 								</th>
 							);
 						})}
@@ -20,7 +19,6 @@ const AllFormsTable = () => {
 							return (
 								<th key={id} class='w-32 h-fit  text-[14px] border-2 border-black'>
 									{field}
-									<input type='radio' className='m-2' />
 								</th>
 							);
 						})}
@@ -29,7 +27,6 @@ const AllFormsTable = () => {
 							return (
 								<th key={id} class='w-32 h-fit  text-[14px] border-2 border-black'>
 									{field}
-									<input type='radio' className='m-2' />
 								</th>
 							);
 						})}
