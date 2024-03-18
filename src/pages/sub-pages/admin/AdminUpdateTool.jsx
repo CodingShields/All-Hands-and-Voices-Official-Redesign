@@ -1,16 +1,14 @@
-
-
+import UpdateToolNavBar from "./UpdateToolNavBar";
 
 const AdminUpdateTool = () => {
+	return (
+		<div className='w-full h-full'>
+			<div className='w-fit h-full'>
+				<UpdateToolNavBar />
+			</div>
+			<div className='w-full h-full'></div>
+		</div>
+	);
+};
 
-
-
-    return (
-        <div>
-            <h1>Admin Update Tool</h1>
-        </div>
-
-    )
-}
-
-export default AdminUpdateTool
+export default AdminUpdateTool;
