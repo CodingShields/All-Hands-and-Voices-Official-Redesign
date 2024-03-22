@@ -1,9 +1,40 @@
+import { useState, useEffect } from "react";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 import hvLogoPng2x from "../assets/images/home-page-images/hv_logo-png_2x.png";
 import signKid from "../assets/images/home-page-images/sign-kid.jpg";
 import lawson from "../assets/images/home-page-images/lawson.jpg";
 import family from "../assets/images/home-page-images/family.jpg";
 
 const HomePage = () => {
+	const [state, setState] = useState({
+		loading: true,
+		error: null,
+		errorMessage: "",
+	});
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		setState({
+			loading: true,
+			error: true,
+			errorMessage: "Loading Page",
+		});
+		const fetchData = async () => {
+			const db = getFirestore();
+			await getDocs(collection(db, "update-pages")).then((snapshot) => {
+				const pageData = snapshot.docs.map((doc) => ({
+					id: doc.id,
+					...doc.data(),
+				}));
+				setData(pageData[1]);
+				setState({ loading: false, error: false, errorMessage: "" });
+			});
+		};
+
+		fetchData();
+	}, []);
+	console.log(data);
 	return (
 		<div>
 			<div class='overflow-hidden bg-white'>
@@ -11,7 +42,7 @@ const HomePage = () => {
 					<div class='absolute top-0 bottom-0 left-3/4 hidden w-screen bg-gray-50 lg:block'></div>
 					<div class='mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8'>
 						<div>
-							<h2 class='text-base font-semibold uppercase tracking-wide text-hvorange'>Where To Start</h2>
+							<h2 class='text-base font-semibold uppercase tracking-wide text-hvorange'></h2>
 							<h3 class='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl'>First, take a deep breath</h3>
 						</div>
 					</div>
@@ -48,32 +79,26 @@ const HomePage = () => {
 						</div>
 						<div class='mt-8 lg:mt-0'>
 							<div class='mx-auto max-w-prose text-base lg:max-w-none'>
-								<p class='prose prose-indigo text-gray-500'>
-									Whether your child was just identified with a hearing loss, or you are just going through the testing, or you are a seasoned parent
-									just looking for support & information to help your child thrive, welcome!
-								</p>
+								{!state.loading ? <p class='prose prose-indigo text-gray-500'>{data.sectionOne[0]}</p> : null}
 							</div>
 							<div class='prose prose-indigo mx-auto mt-5 text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none'>
-								<p>
-									This is a place where we focus on what we can do as parents to help our kids succeed. We want that child of yours to change the
-									world, our world. Alabama Hands &amp; Voices is a nonprofit made up of parents just like you. We collaborate with deaf and hard of
-									hearing adults and like-minded professionals who share our belief that
-									<span class='font-bold'>"what works for your child is what makes the choice right"</span>.
-								</p>
+								{!state.loading ? <p class='prose prose-indigo text-gray-500'>{data.sectionOne[1]}</p> : null}
+
 								<p>
 									We hope to build this chapter into a place where you will find practical and sometimes inspiring information to guide you in
 									parenting your own child. If you are going through the hearing screening process, you might want to start with the
-									<span class='font-bold text-hvorange'>Parent Road Map</span> and especially the
+									<span class='font-bold text-hvorange'> Parent Road Map</span> and especially the
 									<a
 										class='font-bold text-hvorange hover:text-hvorange-700'
 										href='https://www.youtube.com/watch?v=8NM6u8VOfrk'
 										target='_blank'
 										rel='noopener'
 									>
-										Loss &amp; Found video
+										{" "}Loss &amp; Found video
 									</a>
 									.
 								</p>
+								{!state.loading ? <p class='prose prose-indigo text-gray-500'>{data.sectionOne[2]}</p> : null}
 								<p>
 									You can find us through this page, through phone calls and emails, and our
 									<a
@@ -119,17 +144,9 @@ const HomePage = () => {
 					<div class='relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
 						<div class='relative'>
 							<h3 class='text-2xl font-extrabold tracking-tight text-hvorange sm:text-3xl'>OUR MISSION</h3>
-							<p class='mt-4 text-lg'>
-								Hands & Voices is dedicated to supporting families with children who are DHH without a bias around communication modes or methodology.
-							</p>
-							<p class='mt-4 text-lg'>
-								We're a parent-driven, non-profit organization providing families with the resources, networks, and information they need to improve
-								communication access and educational outcomes for their children.
-							</p>
-							<p class='mt-4 text-lg'>
-								Our outreach activities, parent/professional collaboration, and advocacy efforts are focused on enabling DHH children to reach their
-								highest potential.
-							</p>
+							{!state.loading ? <p class='mt-4 text-lg'>{data.sectionTwo[0]}</p> : null}
+							{!state.loading ? <p class='mt-4 text-lg'>{data.sectionTwo[1]}</p> : null}
+							{!state.loading ? <p class='mt-4 text-lg'>{data.sectionTwo[2]}</p> : null}
 							<a class='text-lg font-bold text-hvorange' href='http://www.handsandvoices.org/'>
 								www.handsandvoices.org
 							</a>
@@ -174,11 +191,7 @@ const HomePage = () => {
 						<div class='lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8'>
 							<div class='lg:col-start-2'>
 								<h3 class='text-2xl font-extrabold tracking-tight text-hvorange sm:text-3xl'>MEMBERSHIP</h3>
-								<p class='mt-3 text-lg'>
-									Thank you for your interest in Alabama Hands & Voices. Please consider joining our Hands & Voices chapter. Membership fees help fund
-									our chapter activities and operations and provide members with newsletters from Hands & Voices headquarters. Yearly membership fees
-									are $25 for families, students, and deaf adults and $40 for professionals and $50 for organizations.
-								</p>
+								{!state.loading ? <p class='mt-3 text-lg'>{data.sectionThree[0]}</p> : null}
 								<p class='mt-3 text-lg'>
 									If you are interested in becoming a member, please follow this
 									<a class='font-bold text-hvorange' href='membership.html' target='_blank' rel='noopener'>

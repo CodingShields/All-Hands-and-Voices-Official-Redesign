@@ -82,7 +82,7 @@ export const allFormsTableData = [
 		formName: ["GBYS", "ASTra", "Membership"],
 		formType: ["Personal", "Referral", "N/A"],
 		fields: [
-			"Parent/Guardian Name",
+			"Parent/Guardian",
 			"Secondary Parent/Guardian Name",
 			"Professionals Full Name",
 			"Referral Role",

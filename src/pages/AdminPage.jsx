@@ -49,18 +49,18 @@ const AdminPage = () => {
 			{!state.adminAccess ? <LoginPage setAdminAccess={handleAdminAccess} /> : null}
 
 			{state.adminAccess ? (
-				<div className='w-full h-fit flex flex-row justify-evenly items-center bg-hvorange-200  p-2 mx-auto'>
+				<div className='w-full h-fit flex flex-row justify-evenly items-center bg-gray-200  p-2 mx-auto'>
 					<button
 						onClick={handleNavBarSelection}
 						name='update'
-						className={state.activeTab === "update" ? "text-white font-bold underline text-xl" : "text-hvblue-500 text-lg hover:text-white"}
+						className={state.activeTab === "update" ? "text-hvorange-500 underline text-xl" : "text-hvblue-500 text-lg hover:text-white"}
 					>
 						Update Tool
 					</button>
 					<button
 						onClick={handleNavBarSelection}
 						name='form'
-						className={state.activeTab === "form" ? "text-white font-bold underline text-xl" : "text-hvblue-500 text-lg hover:text-white"}
+						className={state.activeTab === "form" ? "text-hvorange-500  underline text-xl" : "text-hvblue-500 text-lg hover:text-white"}
 					>
 						Submitted Forms
 					</button>

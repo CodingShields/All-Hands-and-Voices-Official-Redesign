@@ -216,22 +216,23 @@ const MembershipPage = () => {
 							</div>
 						</div>
 					</div>
-
-					<button
-						type='submit'
-						className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
-						formaction='choose-your-membership.html'
-					>
-						Submit
-					</button>
+					<div className='flex justify-evenly'>
+						<button
+							type='submit'
+							className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300 '
+							formaction='choose-your-membership.html'
+						>
+							Submit
+						</button>{" "}
+						<button
+							onClick={() => setShowModal(true)}
+							className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
+						>
+							Make Membership Payment
+						</button>
+					</div>
 				</form>
 			</section>{" "}
-			<button
-				onClick={() => setShowModal(true)}
-				className='bg-hvorange text-white h-fit w-fit px-4 py-2 rounded-lg hover:shadow-2xl hover:shadow-hvorange hover:bg-hvblue ease-in-out duration-300'
-			>
-				Make Membership Payment
-			</button>
 			<MembershipModal show={showModal} closeModal={() => setShowModal(false)} />
 		</div>
 	);

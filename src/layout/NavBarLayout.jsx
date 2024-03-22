@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ChevDownBtn from "../components/ChevDownBtn";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import NavBarDropDown from "../components/NavBarDropDown";
 import aboutDropDownProps from "../data/arrays/aboutNavBarDropDown";
 import programsDropDownProps from "../data/arrays/programsNavBarDropDown";
 
 export default function DashBoardLayout() {
+
 	const [aboutDropDown, setAboutDropDown] = useState(false);
 	const [programsDropDown, setProgramsDropDown] = useState(false);
-
-	
 
 	const handleAboutClick = () => {
 		setAboutDropDown(!aboutDropDown);
@@ -77,7 +76,7 @@ export default function DashBoardLayout() {
 				<NavLink to='membership' className='hover:text-hvorange'>
 					Membership
 				</NavLink>
-				<NavLink to='admin' className='hover:text-hvorange'>
+				<NavLink to='admin' className='text-hvblue-300 hover:text-hvorange'>
 					Admin
 				</NavLink>
 			</nav>
