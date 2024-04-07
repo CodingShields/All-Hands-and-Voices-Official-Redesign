@@ -13,7 +13,7 @@ const Education = () => {
 	return (
 		<div className='bg-gray-100 flex flex-col '>
 			<FormModal show={false} formsArray={forms} />
-			<div className='border-2 border-gray-100 w-fit h-fit  mx-auto  p-8 rounded-2xl bg-white shadow-2xl mt-12'>
+			<div className='border-2 border-gray-100 w-fit h-fit  mx-auto  p-8 mb-4 rounded-2xl bg-white shadow-2xl mt-12'>
 				<h1 className='font-kaushan text-4xl text-center text-hvorange-500 p-4 transition-all ease-in-out duration-300'>All About Astra!</h1>
 				<img src={AstraLogo} className='w-64 mx-auto' />
 			</div>
@@ -63,24 +63,29 @@ const Education = () => {
 				>
 					Website
 				</a>
-					<div>
-						<ul className='list-disc list-inside marker:text-white text-hvblue-500 text-lg p-4 w-3/5 mx-auto text-left'>
-							<li href='https://handsandvoices.org/IEPmeetingplanner/' target='_blank' className='text-hvblue-500'>
+				<div>
+					<ul className='list-disc list-inside marker:text-white text-hvblue-500 text-lg p-4 w-3/5 mx-auto text-left'>
+						<li className='text-hvblue-500'>
+							<a href='https://handsandvoices.org/IEPmeetingplanner/' target='_blank'>
 								IEP Meeting Planner
-							</li>
-							<li
+							</a>
+						</li>
+						<li
+							className='text-hvblue-500'
 							// onClick={handleModalOpen} https://handsandvoices.org/pdf/IEP_Checklist.pdf
-							>
-								IEP/504 Checklist
-							</li>
-							<li>Communication Plan</li>
-							<li href='https://handsandvoices.org/articles/education/popup/pop_index.html' target='_blank'>
+						>
+							IEP/504 Checklist
+						</li>
+						<li className='text-hvblue-500'>Communication Plan</li>
+						<li className='text-hvblue-500'>
+							<a href='https://handsandvoices.org/articles/education/popup/pop_index.html' target='_blank'>
 								Pop-Up IEP
-							</li>
-							<li>D/HH Student Self-Advocacy Inventory</li>
-							<li>Functional Listening Evaluation</li>
-						</ul>
-					</div>
+							</a>
+						</li>
+						<li>D/HH Student Self-Advocacy Inventory</li>
+						<li>Functional Listening Evaluation</li>
+					</ul>
+				</div>
 			</div>
 			<AstraForm />
 		</div>
