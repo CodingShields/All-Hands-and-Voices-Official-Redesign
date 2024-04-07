@@ -41,7 +41,7 @@ const Education = () => {
 					</div>
 				</div>
 			</div>
-			<div className='w-full bg-hvblue-500 text-white text-xl p-4 w-3/5 mx-auto text-center space-y-4 py-12'>
+			<div className='w-full bg-hvblue-500 text-white text-xl p-4  mx-auto text-center space-y-4 py-12'>
 				<h2>Help is Here! Ask for an ASTra advocate by completing an advocacy request form below.</h2>
 				<h2>
 					Join the wait list for Level 1 Educational Advocacy training class by registering{" "}
@@ -54,7 +54,7 @@ const Education = () => {
 					</a>
 				</h2>
 			</div>
-			<div className='w-full bg-hvorange-500 text-white text-xl p-4 w-3/5 mx-auto text-center space-y-4 py-12'>
+			<div className='w-full bg-hvorange-500 text-white text-xl p-4 mx-auto text-center space-y-4 py-12'>
 				<h1 className='text-2xl font-bold text-center  p-4 '>Take a look at our favorite resources available on Hands & Voices HQ</h1>
 				<a
 					className='text-hvblue-500 underline font-bold hover:cursor-pointer hover:underline transition-all ease-in-out duration-300'
