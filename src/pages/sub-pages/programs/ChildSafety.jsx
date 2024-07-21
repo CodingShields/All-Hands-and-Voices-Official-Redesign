@@ -4,7 +4,7 @@ import GBYSLogo from "../../../assets/images/programs/childrens-safety-project/G
 import alabamahvlogo from "../../../assets/images/programs/childrens-safety-project/alabamahvlogo.png";
 const ChildSafety = () => {
 	return (
-		<div className='w-full h-full my-8'>
+		<div className='w-full h-full my-8 animate-fadeIn'>
 			<div className='w-1/2 h-fit mx-auto text-center my-12'>
 				<h1 className='font-kaushan text-4xl'>O.U.R. Children’s Safety Project</h1>
 				<img src={ourLogo} className='mx-auto' />

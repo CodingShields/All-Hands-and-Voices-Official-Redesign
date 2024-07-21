@@ -1,6 +1,6 @@
 const Staff = () => {
 	return (
-		<div className='w-full h-full '>
+		<div className='w-full h-full animate-fadeIn'>
 			<div className='w-full h-1/2 bg-hvorange flex flex-col items-center justify-center text-center p-4 shadow-2xl shadow-slate-400'>
 				<h1 className='text-6xl font-kaushan text-black py-4'>Staff</h1>
 				<p className='text-lg font-bold text-black py-4 w-1/2'>
@@ -96,9 +96,7 @@ const Staff = () => {
 						</div>
 					</div>{" "}
 				</div>
-				<div
-				className="py-8"
-				>
+				<div className='py-8'>
 					<h1 className='text-2xl font-bold text-hvorange pt-8 text-center ease-in-out transition-all duration-30 group-hover:text-hvorange'>
 						ASTra Coordinator
 					</h1>

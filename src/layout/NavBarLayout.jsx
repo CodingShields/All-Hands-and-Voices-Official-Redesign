@@ -16,7 +16,6 @@ export default function DashBoardLayout() {
 		setTimeout(() => {
 			setAboutDropDown(false);
 		}, 3000);
-		console.log("success");
 	};
 
 	const handleProgramsClick = () => {
@@ -25,7 +24,6 @@ export default function DashBoardLayout() {
 		setTimeout(() => {
 			setProgramsDropDown(false);
 		}, 3000);
-		console.log("success");
 	};
 
 	function classNames(...classes) {
@@ -35,20 +33,24 @@ export default function DashBoardLayout() {
 
 
 	return (
-		<div id='header' className='w-full bg-hvblue border-b-2 border-hvorange shadow-md shadow-hvorange'>
+		<div id='header' className='w-full bg-hvblue border-b-2 border-hvorange shadow-md shadow-hvorange transition-all duration-500 ease-in-out animate-fadeIn'>
 			<nav className='flex justify-evenly text-white w-3/4 mx-auto p-2 text-lg font-bold '>
 				<NavLink to='/' className='hover:text-hvorange'>
 					Home
 				</NavLink>
 				<div>
-					<NavLink id='about' onClick={handleAboutClick} className='hover:text-hvorange w-fit flex flex-row justify-center items-center'>
+					<NavLink
+						id='about'
+						onClick={handleAboutClick}
+						className='hover:text-hvorange w-fit flex flex-row justify-center items-center transition-all duration-500 ease-in-out'
+					>
 						About <ChevDownBtn onClick={handleAboutClick} />
 					</NavLink>
 
 					<div
 						className={classNames(
 							aboutDropDown
-								? "absolute scale-125 ease-in-out duration-500 transition-all mt-12 z-20 bg-hvblue-400 rounded-lg shadow-hvorange shadow-2xl"
+								? "absolute scale-125 ease-in-out duration-500 transition-all mt-12 z-20 bg-hvblue-400 rounded-lg shadow-hvorange shadow-2xl "
 								: "ease-in-out duration-500 transition-all scale-0 absolute"
 						)}
 					>
@@ -56,7 +58,11 @@ export default function DashBoardLayout() {
 					</div>
 				</div>
 				<div>
-					<NavLink id='programs' onClick={handleProgramsClick} className='hover:text-hvorange w-fit flex flex-row justify-center items-center'>
+					<NavLink
+						id='programs'
+						onClick={handleProgramsClick}
+						className='hover:text-hvorange w-fit flex flex-row justify-center items-center transition-all duration-500 ease-in-out'
+					>
 						Programs <ChevDownBtn onClick={handleProgramsClick} />
 					</NavLink>
 					<div
@@ -69,15 +75,12 @@ export default function DashBoardLayout() {
 						<NavBarDropDown data={programsDropDownProps} />
 					</div>
 				</div>
-				<NavLink to='resources' className='hover:text-hvorange'>
+				<NavLink to='resources' className='hover:text-hvorange transition-all duration-500 ease-in-out'>
 					Resources
 				</NavLink>
 
-				<NavLink to='membership' className='hover:text-hvorange'>
+				<NavLink to='membership' className='hover:text-hvorange transition-all duration-500 ease-in-out'>
 					Membership
-				</NavLink>
-				<NavLink to='admin' className='text-hvblue-300 hover:text-hvorange'>
-					Admin
 				</NavLink>
 			</nav>
 		</div>

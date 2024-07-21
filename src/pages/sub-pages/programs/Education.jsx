@@ -11,7 +11,7 @@ const Education = () => {
 	const [forms, setForms] = useState({ AstraFormsArray });
 
 	return (
-		<div className='bg-gray-100 flex flex-col '>
+		<div className='bg-gray-100 flex flex-col animate-fadeIn '>
 			<FormModal show={false} formsArray={forms} />
 			<div className='border-2 border-gray-100 w-fit h-fit  mx-auto  p-8 mb-4 rounded-2xl bg-white shadow-2xl mt-12'>
 				<h1 className='font-kaushan text-4xl text-center text-hvorange-500 p-4 transition-all ease-in-out duration-300'>All About Astra!</h1>

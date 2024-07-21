@@ -2,9 +2,7 @@ import contactUs from "../../../assets/images/contact-us/contactUs.jpg";
 
 const ContactUs = () => {
 	return (
-		<div
-		className="w-full h-full bg-hvorange bg-opacity-50"
-		>
+		<div className='w-full h-full bg-hvorange bg-opacity-50 animate-fadeIn'>
 			<div className='flex flex-row w-4/6 mx-auto bg-hvblue pt-8 pb-24'>
 				<div className='mx-auto bg-hvblue h-fit p-8 mt-8'>
 					<img src={contactUs} className='w-96 shadow-2xl rounded-xl' />

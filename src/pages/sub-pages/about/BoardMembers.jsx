@@ -12,7 +12,7 @@ import kristine from "../../../assets/images/about-us/board-members/kristine.jpg
 const BoardMembers = () => {
 	return (
 		<div>
-			<div className='w-full h-fit bg-hvorange text-white text-center px-4 mx-auto'>
+			<div className='w-full h-fit bg-hvorange text-white text-center px-4 mx-auto animate-fadeIn'>
 				<h1 className='font-kaushan text-4xl py-4 '>Alabama Hands & Voices Board of Directors</h1>
 				<p className='w-3/5 mx-auto text-left text-white text-xl'>
 					The Alabama Hands & Voices Board of Directors oversees the programs, staff, and fundraising efforts of our nonprofit in support of families

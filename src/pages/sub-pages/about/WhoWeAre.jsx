@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HVMembershipForm from "../../../assets/documents/HV-Membership-Form.pdf";
 import aboutUsBanner from "../../../assets/images/about-us/who-we-are/aboutUsBanner.jpg";
 import aboutUsWhoWeAre1 from "../../../assets/images/about-us/who-we-are/aboutUsWhoWeAre1.jpg";
@@ -12,7 +12,7 @@ const WhoWeAre = () => {
 	};
 
 	return (
-		<div>
+		<div className='animate-fadeIn'>
 			<div className='w-full bg-cover bg-center flex flex-col justify-center items-center '>
 				<div className='w-full h-fit bg-black bg-opacity-30 py-4 text-white text-center absolute left-50 z-10'>
 					<h1 className=' sm:text-5xl lg:text-7xl font-kaushan '>About Us</h1>
@@ -59,7 +59,7 @@ const WhoWeAre = () => {
 						</p>
 						<div className='w-full py-10 flex justify-center items-center'>
 							<button
-								class='rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-indigo-700 shadow-md hover:bg-hvorange hover:text-white hover:shadow-white hover:shadow-lg ease-in-out duration-300 transition-all  sm:inline-block sm:w-auto'
+								className='rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-indigo-700 shadow-md hover:bg-hvorange hover:text-white hover:shadow-white hover:shadow-lg ease-in-out duration-300 transition-all  sm:inline-block sm:w-auto'
 								onClick={() => {
 									Navigate("/about/contact-us");
 								}}

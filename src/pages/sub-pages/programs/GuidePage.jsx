@@ -36,7 +36,7 @@ const GuidePage = () => {
 	console.log(state.showModal);
 
 	return (
-		<div>
+		<div className='animate-fadeIn'>
 			{showModal ? <DownloadModal closeModal={handleModal} /> : null}
 			<div className='w-full h-96 '>
 				<div className='w-full h-96 absolute left-36 '>

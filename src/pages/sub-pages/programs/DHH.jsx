@@ -84,7 +84,7 @@ const DHH = () => {
 		}
 	};
 	return (
-		<div className='w-full h-full my-8'>
+		<div className='w-full h-full my-8 animate-fadeIn'>
 			{state.error ? (
 				<div className='fixed top-0 left-0 z-50 w-full h-full bg-black bg-opacity-50'>
 					<ErrorModal error={state.errorMessage} onClose={() => setState({ ...state, error: false })} />

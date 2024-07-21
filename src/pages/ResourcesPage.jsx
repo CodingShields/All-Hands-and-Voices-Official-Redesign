@@ -6,7 +6,7 @@ const ResourcesPage = () => {
 	const navigate = useNavigate();
 	return (
 		<div>
-			<div className='w-full h-full bg-gray-100'>
+			<div className='w-full h-full bg-gray-100 animate-fadeIn'>
 				<div className='w-full h-72 flex flex-row justify-center items-center '>
 					<img className='absolute w-full h-72 object-cover object-center brightness-125' src={resourcesHeader} />
 					{/* <div

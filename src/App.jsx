@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthContextProvider } from "./context/AuthContext.jsx"
+import { AuthContextProvider } from "./context/AuthContext.jsx";
 import HomePage from "./pages/HomePage";
 import Layout from "./layout/Layout.jsx";
-import AboutPage from "./pages/AboutPage";
-import ProgramsPage from "./pages/ProgramsPage.jsx";
 import ResourcesPage from "./pages/ResourcesPage.jsx";
 import MembershipPage from "./pages/MembershipPage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
@@ -23,8 +21,6 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Layout />}>
 						<Route index element={<HomePage />} />
-						<Route path='about' element={<AboutPage />} />
-						<Route path='programs' element={<ProgramsPage />} />
 						<Route path='resources' element={<ResourcesPage />} />
 						<Route path='membership' element={<MembershipPage />} />
 						<Route path='about/board-members' element={<BoardMembers />} />
@@ -35,8 +31,8 @@ function App() {
 						<Route path='programs/dhh' element={<DHH />} />
 						<Route path='programs/education' element={<Education />} />
 						<Route path='programs/guide' element={<GuidePage />} />
-						<Route element={<ProtectedRoute />} />
 						<Route path='admin' element={<AdminPage />} />
+						<Route element={<ProtectedRoute />} />
 					</Route>
 				</Routes>
 			</AuthContextProvider>
