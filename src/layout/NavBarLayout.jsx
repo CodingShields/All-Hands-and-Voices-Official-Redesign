@@ -33,7 +33,7 @@ export default function DashBoardLayout() {
 
 
 	return (
-		<div id='header' className='w-full bg-hvblue border-b-2 border-hvorange shadow-md shadow-hvorange transition-all duration-500 ease-in-out animate-fadeIn'>
+		<div id='header' className='w-full bg-hvblue border-b-2 border-hvorange shadow-md shadow-hvorange  transition-all duration-500 ease-in-out '>
 			<nav className='flex justify-evenly text-white w-3/4 mx-auto p-2 text-lg font-bold '>
 				<NavLink to='/' className='hover:text-hvorange'>
 					Home

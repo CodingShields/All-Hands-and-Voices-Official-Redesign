@@ -91,7 +91,7 @@ const GBYSPersonalForm = () => {
 							</div>
 
 							<div className='flex flex-col w-full px-4'>
-								<label for='inputName'>Secondary Parent/Guardian Name:</label>
+								<label htmlFor='inputName'>Secondary Parent/Guardian Name:</label>
 								<input
 									onChange={(e) => {
 										setFormData({ ...formData, secondaryParentName: e.target.value });
@@ -103,7 +103,7 @@ const GBYSPersonalForm = () => {
 						</div>
 						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
 							<div className='flex flex-col w-full px-4'>
-								<label for='inputTel'>Phone Number:</label>
+								<label htmlFor='inputTel'>Phone Number:</label>
 								<input
 									onChange={(e) => {
 										setFormData({ ...formData, phone: e.target.value });
@@ -113,7 +113,7 @@ const GBYSPersonalForm = () => {
 								/>
 							</div>
 							<div className='flex flex-col w-full px-4'>
-								<label for='childName'>Child's Name:</label>
+								<label htmlFor='childName'>Child's Name:</label>
 								<input
 									onChange={(e) => {
 										setFormData({ ...formData, childName: e.target.value });
@@ -126,7 +126,7 @@ const GBYSPersonalForm = () => {
 
 						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
 							<div className='flex flex-col w-full px-4'>
-								<label for='inputEmail'>Email:</label>
+								<label htmlFor='inputEmail'>Email:</label>
 								<input
 									onChange={(e) => {
 										setFormData({ ...formData, email: e.target.value });
@@ -141,7 +141,7 @@ const GBYSPersonalForm = () => {
 								</small>
 							</div>
 							<div className='flex flex-col w-full px-4'>
-								<label for='childName'>Child Birthday</label>
+								<label htmlFor='childName'>Child Birthday</label>
 								<input
 									onChange={(e) => {
 										setFormData({ ...formData, childBirth: e.target.value });
@@ -175,7 +175,7 @@ const GBYSPersonalForm = () => {
 								/>
 							</div>
 							<div className='flex flex-col w-full pl-2 '>
-								<label for='inputZip'>Zip:</label>
+								<label htmlFor='inputZip'>Zip:</label>
 								<input
 									onChange={(e) => {
 										setFormData({ ...formData, zip: e.target.value });
@@ -231,7 +231,7 @@ const GBYSPersonalForm = () => {
 								</select>
 							</div>
 							<div className='flex flex-col w-full pr-2'>
-								<label for='inputSchoolDist'>Degree of Hearing Loss (left ear):</label>
+								<label htmlFor='inputSchoolDist'>Degree of Hearing Loss (left ear):</label>
 								<select
 									onChange={(e) => {
 										setFormData({ ...formData, degreeOfHearingLossLeft: e.target.value });
@@ -251,7 +251,7 @@ const GBYSPersonalForm = () => {
 						</div>
 						<div className='flex flex-row justify-around w-full mx-auto mb-4'>
 							<div className='flex flex-col w-full pr-2'>
-								<label for='inputSchoolDist'>Type Of Hearing Loss</label>
+								<label htmlFor='inputSchoolDist'>Type Of Hearing Loss</label>
 								<select
 									onChange={(e) => {
 										setFormData({ ...formData, typeOfHearingLoss: e.target.value });
@@ -270,7 +270,7 @@ const GBYSPersonalForm = () => {
 								</select>
 							</div>
 							<div className='flex flex-col w-full pr-2'>
-								<label for='inputSchoolDist'>Hearing Device if used:</label>
+								<label htmlFor='inputSchoolDist'>Hearing Device if used:</label>
 								<select className='form-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '>
 									<option>Select One</option>
 									<option>Unsure</option>

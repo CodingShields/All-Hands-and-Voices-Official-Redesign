@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MembershipModal from "../components/MembershipModal";
-
+import { StartPageLoadTop } from "../utilities/tools";
 const MembershipPage = () => {
 	const [state, setState] = useState({
 		error: false,
@@ -25,6 +25,10 @@ const MembershipPage = () => {
 		membershipType: "",
 		membershipDonation: "",
 	});
+
+	useEffect(() => {
+		StartPageLoadTop();
+	}, []);
 
 	return (
 		<div>

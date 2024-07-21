@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import {collection, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 import hvLogoPng2x from "../assets/images/home-page-images/hv_logo-png_2x.png";
 import signKid from "../assets/images/home-page-images/sign-kid.jpg";
@@ -11,8 +12,11 @@ const HomePage = () => {
 		loading: true,
 		error: null,
 		errorMessage: "",
+		eventsData: [],
 	});
 	const [data, setData] = useState([]);
+
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		setState({
@@ -25,6 +29,7 @@ const HomePage = () => {
 					id: doc.id,
 					...doc.data(),
 				}));
+				setState({ eventsData: pageData[0].currentEvent });
 				setData(pageData[0].currentEvent, "test");
 				setState({ loading: false, error: false, errorMessage: "" });
 			});
@@ -34,7 +39,7 @@ const HomePage = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="animate-fadeIn w-full h-full">
 			<LoadingModal open={state.loading} />
 			<div className='overflow-hidden bg-white animate-fadeIn'>
 				<div className='relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8'>
@@ -118,8 +123,8 @@ const HomePage = () => {
 										rel='noopener'
 									>
 										Facebook Page
-									</a>
-									{" "} or our{" "}
+									</a>{" "}
+									or our{" "}
 									<a
 										href='https://www.facebook.com/groups/Alabamahandsandvoices/'
 										target='_blank'
@@ -136,7 +141,7 @@ const HomePage = () => {
 									Standing with you,
 									<br />
 								</p>
-								<p className="text-hvorange font-semibold italic indent-4">Your fellow parents at Alabama Hands & Voices</p>
+								<p className='text-hvorange font-semibold italic indent-4'>Your fellow parents at Alabama Hands & Voices</p>
 							</div>
 						</div>
 					</div>
@@ -226,14 +231,24 @@ const HomePage = () => {
 								</p>
 								<p className='mt-3 text-lg'>
 									If you are interested in becoming a member, please follow this
-									<a className='font-bold text-hvorange' href='membership.html' target='_blank' rel='noopener'>
-										{" "}
-										link{" "}
-									</a>
+									<p
+										className='font-bold text-hvorange cursor-pointer'
+										onClick={() => {
+											navigate("/membership");
+										}}
+									>
+										Membership Link
+									</p>
 									to online membership application or download this
-									<a className='font-bold text-hvorange' href='assets/hv-membership-form.docx' target='_blank' rel='noopener'>
+									<a
+										className='font-bold text-hvorange cursor-pointer'
+										href='assets/documents/hv-membership-form.docx'
+										download='hv-membership-form.docx'
+										target='_blank'
+										rel='noopener'
+									>
 										{" "}
-										form{" "}
+										Membership Form{" "}
 									</a>
 									and scan or mail in.
 								</p>

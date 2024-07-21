@@ -3,6 +3,10 @@ module.exports = {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			animation: {
+				scale: "scale 5s ease-in-out loop",
+				fadeIn: "fadeIn 3s ease-in forwards",
+			},
 			keyframes: {
 				"scale-0": {
 					"0%": {
@@ -13,13 +17,9 @@ module.exports = {
 					},
 				},
 				fadeIn: {
-					"0%": { opacity: 0 },
+					"0%": { opacity: 1 },
 					"100%": { opacity: 1 },
 				},
-			},
-			animation: {
-				scale: "scale 5s ease-in-out loop",
-				fadeIn: "fadeIn 1s ease-in forwards",
 			},
 			fontFamily: {
 				kaushan: ["Kaushan Script"],
