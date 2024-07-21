@@ -267,7 +267,7 @@ const GBYSReferralForm = () => {
 								</select>
 							</div>
 							<div className='flex flex-col w-full pr-2'>
-								<label for='inputSchoolDist'>Hearing Device if used:</label>
+								<label htmlFor='inputSchoolDist'>Hearing Device if used:</label>
 								<select className='htmlForm-control rounded-lg text-black focus:ring-offset-hvorange focus:ring-offset-1 focus:ring-2 focus:ring-hvorange focus:ring-inset focus:shadow-md focus:shadow-hvorange '>
 									<option>Select One</option>
 									<option>Unsure</option>
