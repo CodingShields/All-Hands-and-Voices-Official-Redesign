@@ -56,27 +56,27 @@ const Footer = () => {
 									</a>
 								</li>
 								<li>
-									<a href='#' className='text-base text-gray-500 hover:text-gray-900'>
+									<a href='/about/who-we-are' className='text-base text-gray-500 hover:text-gray-900'>
 										About
 									</a>
 								</li>
 								<li>
-									<a href='#' className='text-base text-gray-500 hover:text-gray-900'>
+									<a href='/programs/guide' className='text-base text-gray-500 hover:text-gray-900'>
 										Programs
 									</a>
 								</li>
 								<li>
-									<a href='resources' className='text-base text-gray-500 hover:text-gray-900'>
+									<a href='/resources' className='text-base text-gray-500 hover:text-gray-900'>
 										Resources
 									</a>
 								</li>
 								<li>
-									<a href='membership' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
+									<a href='/membership' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
 										Membership
 									</a>
 								</li>
 								<li>
-									<a href='admin' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
+									<a href='/admin' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
 										Admin Portal
 									</a>
 								</li>
