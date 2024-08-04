@@ -45,12 +45,10 @@ export const AuthContextProvider = ({ children }) => {
 		return signInWithEmailAndPassword(auth, email, password);
 	};
 
-	// const logout = () => {
-	// 	console.log("working");
-	// 	resetForm();
-	// 	navigate("/");
-	// 	return signOut(auth);
-	// };
+	const logout = () => {
+		navigate("/");
+		return signOut(auth);
+	};
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -75,7 +73,7 @@ export const AuthContextProvider = ({ children }) => {
 			value={{
 				// createUser,
 				user,
-				// logout,
+				logout,
 				signIn,
 			}}
 		>

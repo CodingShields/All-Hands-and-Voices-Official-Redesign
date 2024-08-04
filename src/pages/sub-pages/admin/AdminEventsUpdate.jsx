@@ -3,6 +3,7 @@ import { getFirestore, getDocs, updateDoc, doc, collection } from "firebase/fire
 import { db } from "../../../firebase/firebaseConfig";
 import LoadingModal from "../../../components/LoadingModal";
 import { ArrowUpCircleIcon } from "@heroicons/react/24/outline";
+import { UserAuth } from "../../../context/AuthContext";
 const AdminUpdateHome = () => {
 	const [state, setState] = useState({
 		error: false,
@@ -14,7 +15,7 @@ const AdminUpdateHome = () => {
 		pastEvents: [],
 		newEventSaved: false,
 	});
-
+	const {logout} = UserAuth();
 	useEffect(() => {
 		const fetchData = async () => {
 			setState((prevState) => ({ ...prevState, loading: true }));
@@ -125,12 +126,18 @@ const AdminUpdateHome = () => {
 					<textarea type='text' className='w-full' value={state.newEvent} onChange={(e) => setState({ ...state, newEvent: e.target.value })} />
 				</div>
 			</div>
-			<div className='py-4'>
+			<div className='py-4 flex flex-col space-y-4'>
 				<button
 					onClick={handleDataUpdate}
 					className='bg-hvorange hover:bg-hvorange-700 text-white font-bold py-2 px-4 rounded shadow-lg shadow-black active:translate-y-2 duration-100 ease-in-out transition-all'
 				>
 					Update Data
+				</button>
+				<button
+					onClick={logout}
+					className='bg-hvorange hover:bg-hvorange-700 text-white font-bold py-2 px-4 rounded shadow-lg shadow-black active:translate-y-2 duration-100 ease-in-out transition-all'
+				>
+					Log Out
 				</button>
 			</div>
 		</div>
