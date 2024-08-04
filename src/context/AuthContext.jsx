@@ -52,23 +52,23 @@ export const AuthContextProvider = ({ children }) => {
 	// 	return signOut(auth);
 	// };
 
-	// useEffect(() => {
-	// 	const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-	// 		// User is authenticated
-	// 		if (currentUser) {
-	// 			setUser(currentUser);
-	// 			console.log("current", currentUser);
-	// 		} else {
-	// 			// User is not authenticated
-	// 			setUser(null);
-	// 			console.log("logged out", currentUser);
-	// 		}
-	// 	});
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+			// User is authenticated
+			if (currentUser) {
+				setUser(currentUser);
+				console.log("current", currentUser);
+			} else {
+				// User is not authenticated
+				setUser(null);
+				console.log("logged out", currentUser);
+			}
+		});
 
-	// 	return () => {
-	// 		unsubscribe();
-	// 	};
-	// }, []);
+		return () => {
+			unsubscribe();
+		};
+	}, []);
 
 	return (
 		<UserContext.Provider
