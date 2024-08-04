@@ -31,7 +31,7 @@ function App() {
 						<Route path='programs/dhh' element={<DHH />} />
 						<Route path='programs/education' element={<Education />} />
 						<Route path='programs/guide' element={<GuidePage />} />
-						<Route element={<ProtectedRoute />} />
+						{/* <Route element={<ProtectedRoute />} /> */}
 						<Route path='admin' element={<AdminPage />} />
 					</Route>
 				</Routes>
