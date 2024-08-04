@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+
 import alabamahvLogo from "../assets/images/footer/alabamahvlogo.svg";
 import home from "../assets/icons/home.svg";
 import mail from "../assets/icons/mail.svg";
@@ -7,7 +8,9 @@ import twitter from "../assets/icons/twitter.png";
 import instagram from "../assets/icons/instagram.png";
 import facebook from "../assets/icons/facebook.png";
 const Footer = () => {
-
+	const useNavigate = (path) => {
+		navigate(path);
+	};
 	return (
 		<div>
 			<div className='w-full h-fit bg-gradient-to-r from-hvblue to-white flex flex-row justify-evenly items-center py-4 border-t-8 border-hvorange'>
