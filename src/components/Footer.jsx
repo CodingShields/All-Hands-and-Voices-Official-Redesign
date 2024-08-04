@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import alabamahvLogo from "../assets/images/footer/alabamahvlogo.svg";
 import home from "../assets/icons/home.svg";
@@ -8,10 +8,9 @@ import twitter from "../assets/icons/twitter.png";
 import instagram from "../assets/icons/instagram.png";
 import facebook from "../assets/icons/facebook.png";
 const Footer = () => {
-	
 	const useNavigate = (path) => {
 		navigate(path);
-	}
+	};
 	return (
 		<div>
 			<div className='w-full h-fit bg-gradient-to-r from-hvblue to-white flex flex-row justify-evenly items-center py-4 border-t-8 border-hvorange'>
@@ -51,34 +50,34 @@ const Footer = () => {
 							<h3 className='text-sm font-semibold uppercase tracking-wider text-gray-400'>Pages</h3>
 							<ul role='list' className='mt-4 space-y-4'>
 								<li>
-									<a href='/' className='text-base text-gray-500 hover:text-gray-900'>
+									<NavLink to='/' className='text-base text-gray-500 hover:text-gray-900'>
 										Home
-									</a>
+									</NavLink>
 								</li>
 								<li>
-									<a href='/about/who-we-are' className='text-base text-gray-500 hover:text-gray-900'>
+									<NavLink to='/about/who-we-are' className='text-base text-gray-500 hover:text-gray-900'>
 										About
-									</a>
+									</NavLink>
 								</li>
 								<li>
-									<a href='/programs/guide' className='text-base text-gray-500 hover:text-gray-900'>
+									<NavLink to='/programs/guide' className='text-base text-gray-500 hover:text-gray-900'>
 										Programs
-									</a>
+									</NavLink>
 								</li>
 								<li>
-									<a href='/resources' className='text-base text-gray-500 hover:text-gray-900'>
+									<NavLink to='/resources' className='text-base text-gray-500 hover:text-gray-900'>
 										Resources
-									</a>
+									</NavLink>
 								</li>
 								<li>
-									<a href='/membership' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
+									<NavLink to='/membership' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
 										Membership
-									</a>
+									</NavLink>
 								</li>
 								<li>
-									<a href='/admin' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
+									<NavLink to='/admin' className='text-base text-gray-500 hover:text-gray-900 hover:cursor-pointer'>
 										Admin Portal
-									</a>
+									</NavLink>
 								</li>
 							</ul>
 						</div>
